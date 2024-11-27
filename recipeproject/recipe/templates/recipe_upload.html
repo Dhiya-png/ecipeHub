@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Recipe</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        /* Style for the entire page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://t3.ftcdn.net/jpg/08/52/52/86/360_F_852528654_xAFMy73zCSbgWs2BnqukjzrTqF2JHter.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        
+        /* Centering the form */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.2); /* Add overlay effect */
+        }
+
+        /* Style for the form box */
+        .form-box {
+            {% comment %} background-color: rgba(255, 255, 255, 0.9); {% endcomment %}
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-box h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-box input[type="text"],
+        .form-box textarea,
+        .form-box input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-box input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-box input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 class="text-white">Upload Your Recipe</h1>
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="text" name="title" placeholder="Title"><br>
+                <textarea name="ingrediance" placeholder="Enter the recipe ingredients"></textarea><br>
+                <textarea name="description" placeholder="Enter the recipe"></textarea><br>
+                <input type="file" name="images"><br>
+                <input type="submit" value="Post">
+            </form>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

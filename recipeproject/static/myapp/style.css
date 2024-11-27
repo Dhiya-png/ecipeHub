@@ -1,0 +1,41 @@
+body{
+    background-color: black;
+}
+.header{
+    color: blue;
+    height: 5rem;
+    /* background-color: black; */
+    border-bottom: 1px solid;
+    border-color: rgb(48, 48, 48);
+    background-color:white;
+ 
+}
+.regbtn{
+    width: 10rem;
+    height: 2.5rem;
+    border: 4px solid;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 4rem;
+    margin-top: 1rem;
+}
+.screen1{
+    height: 85vh;
+    background-color: black;
+    
+}
+.d-block{
+    width: 48rem;
+    height: 70vh;
+    margin-left: 11rem;
+    margin-top: 4rem; 
+}
+.col1{
+    color: white;
+}
+.col-op{
+    height: 4rem;
+    text-align: center;
+}

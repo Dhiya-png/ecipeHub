@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head><style>
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling with background image */
+body {
+    background: url('{% static "assets/recipe-background.jpg" %}') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Main container for the form */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading and description */
+h1 {
+    color: #ff6347;
+    margin-bottom: 0.5em;
+}
+
+p {
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+/* Form input fields */
+form p {
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #e55337;
+}
+
+/* Link to registration page */
+.register-link {
+    margin-top: 1em;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Recipe Website</title>
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Welcome Back!</h1>
+            <p>Login to access delicious recipes</p>
+            <form method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Login" class="submit-btn">
+            </form>
+            <p class="register-link">
+                Not registered yet? <a href="http://127.0.0.1:8000/recipe/reg/">Register here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
